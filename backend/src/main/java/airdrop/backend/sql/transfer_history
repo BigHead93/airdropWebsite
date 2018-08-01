@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `transfer_history`(
+	`id` INT UNSIGNED AUTO_INCREMENT,
+	`request_id` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'id in airdrop_request_history',
+	`address` VARCHAR(42) NOT NULL DEFAULT '' COMMENT 'wallet address',
+	`amount` DECIMAL(16,10) NOT NULL DEFAULT '0.0000000000' COMMENT 'transfer amount',
+	`tx_hash` VARCHAR(62) NOT NULL DEFAULT '' COMMENT 'txhash',
+	`nonce` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'nonce',
+	`status` VARCHAR(20) NOT NULL DEFAULT '' COMMENT 'status:success, failed, in-progress',
+	PRIMARY KEY(`id`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
